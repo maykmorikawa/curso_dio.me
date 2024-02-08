@@ -1,29 +1,33 @@
 /*
-2) Crie uma classe para representar pessoas.
-Para cada pessoa teremos os atributos nome, peso e altura.
-As pessoas devem ter a capacidade de dizer o valor do seu IMC (IMC = peso / (altura * altura));
-Instancie uma pessoa chamada José que tenha 70kg de peso e 1,75 de altura e peça ao José para dizer o valor
-do seu IMC;
+1) Crie uma classe para representar carros. 
+Os carros possuem uma marca, uma cor e um gasto médio de combustível por Kilômetro rodado.
+Crie um método que dado a quantidade de quilómetros e o preço do combustível nos dê o valor 
+gasto em reais para realizar este percurso.
+
 */
 
 
-class Pessoa {
-    nome;
-    peso;
-    altura;
+class Carro {
+    marca;
+    cor;
+    gastomedio;
 
-    constructor(nome, peso, altura) {
-        this.nome = nome;
-        this.peso = peso;
-        this.altura = altura;
+    constructor(marca, cor, gastomedio) {
+        this.marca = marca;
+        this.cor = cor;
+        this.gastomedio = gastomedio;
     }
+  
+  calcularGastorPorPercurso(distanciaEmKm,precoCombustivel){
+    return distanciaEmKm * this.gastomedio * precoCombustivel;
+  }
 
-    calcularImc(){
-       return this.peso / (this.altura * this.altura);
-    }
 }
 
-const jose = new Pessoa ('jose',70,1.75);
-console.log(jose.calcularImc());
-const mayk  = new Pessoa ('mayk',103, 1.80)
-console.log(mayk.calcularImc());
+const uno = new Carro ('fiat','prata',1/12);
+uno.calcularGastorPorPercurso(70, 5);
+console.log(uno.calcularGastorPorPercurso(70, 5));
+
+const palio = new Carro ('fiat','preto',1/10);
+palio.calcularGastorPorPercurso(70, 5);
+console.log(uno.calcularGastorPorPercurso(70, 5));
